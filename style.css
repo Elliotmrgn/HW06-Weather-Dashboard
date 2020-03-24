@@ -1,0 +1,39 @@
+html,
+body {
+    height:100%;
+    max-width:100%;
+    margin: 0;
+}
+
+.item1 { grid-area: header; text-align: center !important; font-size: 60px; padding:0 !important;}
+.item2 { grid-area: menu; font-size: 30px;}
+.item3 { grid-area: main;}
+.item4 { grid-area: footer;}
+
+.grid-container {
+    height:100%;
+    display: grid;
+    grid-template-rows: 100px 50% auto;
+    grid-template-columns: 25% auto;
+    grid-template-areas:
+    'header header'
+    'menu main'
+    'menu footer';
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    padding: 20px 20px;
+}
+
+h1{
+    line-height: 80px;
+}
+
+p{
+    font-size: 25px;
+}
