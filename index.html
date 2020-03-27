@@ -19,8 +19,9 @@
         <!-- header -->
         <div class="item1">Weather Dashboard</div>
 
-        <!-- search -->
-        <div class="item2">Search for a City:
+        <!-- search & recent list-->
+        <div class="item2">
+            <h1>Search for a City:</h1>
             <div class="input-group">
                 <input class="form-control" id="city-search" type="text" placeholder="Search" aria-label="Search" value="Raleigh">
                 <div class="input-group-append">
@@ -28,6 +29,10 @@
                             aria-hidden="true"></i></span>
                 </div>
             </div>
+            <div class="card" id="recent-list" style="width: 18rem;">
+                <ul class="list-group " id="search-history">
+                </ul>
+            </div>   
         </div>
 
         <!-- current city weather -->
@@ -35,7 +40,9 @@
         </div>
 
         <!-- 5 day forcast -->
-        <div class="item4">Footer</div>
+        <div class="item4 forcast-container">
+             
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

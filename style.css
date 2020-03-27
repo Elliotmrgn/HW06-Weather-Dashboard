@@ -1,19 +1,23 @@
 html,
 body {
     height:100%;
-    max-width:100%;
     margin: 0;
+    
 }
 
-.item1 { grid-area: header; text-align: center !important; font-size: 60px; padding:0 !important;}
-.item2 { grid-area: menu; font-size: 30px;}
+
+
+.item1 { grid-area: header; 
+    text-align: center !important; 
+    font-size: 4em; padding:0 !important;}
+.item2 { grid-area: menu;}
 .item3 { grid-area: main;}
 .item4 { grid-area: footer;}
 
 .grid-container {
     height:100%;
     display: grid;
-    grid-template-rows: 100px 50% auto;
+    grid-template-rows: 100px auto auto;
     grid-template-columns: 25% auto;
     grid-template-areas:
     'header header'
@@ -30,10 +34,46 @@ body {
     padding: 20px 20px;
 }
 
-h1{
-    line-height: 80px;
+.card-title{
+    font-size: 2vw;
+}
+
+img{
+    background-color: cadetblue;
+    border-radius: 20px;
 }
 
 p{
-    font-size: 25px;
+    font-size: 1.5vw ;
+}
+
+#recent-list{
+    background-color: none;
+    margin-top: 10px;
+}
+
+#uv{
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.forcast-container{
+    display: flex;
+    justify-content:space-around;
+    overflow:auto;
+    
+    box-sizing:border-box;
+}
+
+.forcast{
+    position: fixed;
+    box-sizing:border-box;
+    background-color: rgba(255, 230, 65, 0.9);
+    border-radius: 10px;
+    position: relative;
+    /* height: 380px;
+    min-width:200px; */
+    width:19%;
+    
 }
