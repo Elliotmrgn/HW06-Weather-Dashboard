@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     function init() {
         $('.item3').empty();
-        $('.item4').empty();
+        $('.forcast-container').empty();
         $("#search-history").empty();
         searchHistory.splice(10);
         var history = $("#search-history")
@@ -101,24 +101,26 @@ $(document).ready(function () {
                                 }
                                 if (x === 5) {
                                     var icon = response.list[listNum].weather[0].icon;
-                                    var humidity = response.list[listNum].main.humidity
+                                    var humidity = response.list[listNum].main.humidity;
                                 }
                                 listNum++;
                             }
 
-                            var forcastCard = $('<div class="card bg-info mb-3 forcast"></div>')
-                            var forcastContent = $('<div class="card-body"></div>')
-                            forcastContent.append('<div class="card-title">' + newDate.add(i, 'days').format('l') + '</div>')
-                            forcastContent.append('<img id="wicon" src="http://openweathermap.org/img/wn/' + icon + '@2x.png" alt="weather icon">')
-                            forcastContent.append('<p class="card-text">High: ' + tempHigh + '</p> ')
-                            forcastContent.append('<p class="card-text">Low: ' + tempLow + '</p> ')
-                            forcastContent.append('<p class="card-text">Humidity: ' + humidity + '%</p> ')
-                            forcastCard.append(forcastContent)
-                            $('.forcast-container').append(forcastCard)
+                            
+                            
+                            var forcastCard = $('<div class="card bg-info forcast col-2"></div>');
+                            var forcastContent = $('<div class="card-body"></div>');
+                            forcastContent.append('<div class="card-title">' + newDate.add(i, 'days').format('l') + '</div>');
+                            forcastContent.append('<img id="wicon" src="http://openweathermap.org/img/wn/' + icon + '@2x.png" alt="weather icon">');
+                            forcastContent.append('<p class="card-text">High: ' + tempHigh + '</p> ');
+                            forcastContent.append('<p class="card-text">Low: ' + tempLow + '</p> ');
+                            forcastContent.append('<p class="card-text">Humidity: ' + humidity + '%</p> ');
+                            forcastCard.append(forcastContent);
+                            $('.forcast-container').append(forcastCard);
                         }
 
                     })
-            });
+            })
     }
 
     init();
@@ -127,17 +129,17 @@ $(document).ready(function () {
     $(document).on('click', '.list-group-item', function () {
         
         var recentSearch = this.textContent
-        searchHistory.unshift(recentSearch)
+        searchHistory.unshift(recentSearch);
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-        search(recentSearch)
+        search(recentSearch);
     })
 
     $('#search').click(function (e) {
         e.preventDefault();
         var userSearch = $('#city-search').val().trim();
-        searchHistory.unshift(userSearch)
+        searchHistory.unshift(userSearch);
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-        search(userSearch)
+        search(userSearch);
 
     });
 })

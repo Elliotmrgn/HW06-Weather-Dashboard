@@ -2,6 +2,7 @@ html,
 body {
     height:100%;
     margin: 0;
+    background-color: #2196F3;
     
 }
 
@@ -10,22 +11,24 @@ body {
 .item1 { grid-area: header; 
     text-align: center !important; 
     font-size: 4em; padding:0 !important;}
-.item2 { grid-area: menu;}
-.item3 { grid-area: main;}
+.item2 { grid-area: menu;min-width: 210px;overflow:hidden;}
+.item3 { grid-area: main; min-height:300px; min-width: 620px; overflow-y:auto}
 .item4 { grid-area: footer;}
 
 .grid-container {
     height:100%;
     display: grid;
-    grid-template-rows: 100px auto auto;
-    grid-template-columns: 25% auto;
+    grid-template-rows: 100px 40% auto;
+    grid-template-columns: 250px auto;
     grid-template-areas:
     'header header'
     'menu main'
     'menu footer';
     grid-gap: 10px;
-    background-color: #2196F3;
+    background-color: rgb(139, 139, 139);
     padding: 10px;
+    overflow-y: auto;
+    margin: 0 20%;
 }
 
 .grid-container > div {
@@ -35,21 +38,33 @@ body {
 }
 
 .card-title{
-    font-size: 2vw;
+    background-color: lightslategray;
+    font-size: 1.5em;
+    width:100%;
+    white-space: nowrap;
+}
+.card-body{
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-img{
+#wicon{
     background-color: cadetblue;
     border-radius: 20px;
+    max-width:100%;
+    height:50px;
+    width:50px;
 }
 
 p{
-    font-size: 1.5vw ;
+    font-size: 1.2em ;
 }
 
 #recent-list{
     background-color: none;
     margin-top: 10px;
+    overflow:hidden;
 }
 
 #uv{
@@ -58,22 +73,37 @@ p{
     border-radius: 10px;
 }
 
+#recent-list{
+    overflow-y: auto;
+    height: inherit;
+}
+
 .forcast-container{
     display: flex;
     justify-content:space-around;
-    overflow:auto;
-    
+    overflow-y:auto;
+    overflow-x: hidden;
     box-sizing:border-box;
+    position: relative;
 }
 
-.forcast{
-    position: fixed;
+
+
+.forcast-card{
+    width:100%
+    position: absolute;
     box-sizing:border-box;
-    background-color: rgba(255, 230, 65, 0.9);
     border-radius: 10px;
-    position: relative;
-    /* height: 380px;
-    min-width:200px; */
-    width:19%;
     
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+        'header header'
+        'menu main'
+        'footer footer';
+    }
+
 }
