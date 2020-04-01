@@ -108,7 +108,7 @@ $(document).ready(function () {
 
                             
                             
-                            var forcastCard = $('<div class="card bg-info forcast col-2"></div>');
+                            var forcastCard = $('<div class="card bg-info forcast col-2 container-fluid"></div>');
                             var forcastContent = $('<div class="card-body"></div>');
                             forcastContent.append('<div class="card-title">' + newDate.add(i, 'days').format('l') + '</div>');
                             forcastContent.append('<img id="wicon" src="http://openweathermap.org/img/wn/' + icon + '@2x.png" alt="weather icon">');

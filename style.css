@@ -2,17 +2,17 @@ html,
 body {
     height:100%;
     margin: 0;
-    background-color: #2196F3;
     
 }
+
 
 
 
 .item1 { grid-area: header; 
     text-align: center !important; 
     font-size: 4em; padding:0 !important;}
-.item2 { grid-area: menu;min-width: 210px;overflow:hidden;}
-.item3 { grid-area: main; min-height:300px; min-width: 620px; overflow-y:auto}
+.item2 { grid-area: menu;overflow:hidden;}
+.item3 { grid-area: main; overflow-y:auto}
 .item4 { grid-area: footer;}
 
 .grid-container {
@@ -28,7 +28,8 @@ body {
     background-color: rgb(139, 139, 139);
     padding: 10px;
     overflow-y: auto;
-    margin: 0 20%;
+    
+    align-items: stretch;
 }
 
 .grid-container > div {
